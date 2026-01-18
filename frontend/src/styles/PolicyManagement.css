@@ -1,0 +1,232 @@
+/* Policy Management Page Styles */
+
+.stat-card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.stat-card.stat-active {
+  border-left: 5px solid #28a745;
+}
+
+.stat-card.stat-expired {
+  border-left: 5px solid #dc3545;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  padding: 15px 20px;
+}
+
+.card-header .card-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table thead th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table tbody td {
+  padding: 12px 15px;
+  color: #555;
+  vertical-align: middle;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+}
+
+.action-buttons .btn i {
+  margin-right: 3px;
+}
+
+.badge {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-header .modal-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.modal-body p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.modal-body strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.policy-terms {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+  line-height: 1.6;
+  color: #555;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.modal-footer .btn {
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+}

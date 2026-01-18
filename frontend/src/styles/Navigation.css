@@ -1,0 +1,31 @@
+.navbar-custom {
+  background: linear-gradient(135deg, #1f3a70 0%, #2d5a8c 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.brand-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link-custom {
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}

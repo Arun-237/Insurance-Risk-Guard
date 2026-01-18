@@ -1,0 +1,127 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "RiskGuard Root"
+    },
+    {
+      "path": "backend",
+      "name": "Backend (Spring Boot)"
+    },
+    {
+      "path": "frontend",
+      "name": "Frontend (React)"
+    },
+    {
+      "path": "database",
+      "name": "Database (SQL)"
+    }
+  ],
+  "settings": {
+    "java.home": "${env:JAVA_HOME}",
+    "maven.executable.path": "mvn",
+    "maven.terminal.customEnvVars": {},
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[java]": {
+      "editor.defaultFormatter": "redhat.java",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "spring-boot.ls.java.home": "${env:JAVA_HOME}",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/target": true,
+      "**/.git": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/target": true,
+      ".git": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "redhat.java",
+      "vscjava.vscode-java-debug",
+      "vscjava.vscode-maven",
+      "pivotal.vscode-spring-boot",
+      "vscjava.vscode-java-pack",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "ms-mssql.mssql",
+      "ms-azuretools.vscode-docker"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Backend (Spring Boot)",
+        "type": "java",
+        "name": "Spring Boot App",
+        "request": "launch",
+        "cwd": "${workspaceFolder:Backend (Spring Boot)}",
+        "mainClass": "com.riskguard.RiskGuardApplication",
+        "projectName": "riskguard",
+        "args": "",
+        "envFile": "${workspaceFolder}/.env"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Backend: Clean",
+        "type": "shell",
+        "command": "mvn",
+        "args": ["clean"],
+        "cwd": "${workspaceFolder:Backend (Spring Boot)}",
+        "group": "build"
+      },
+      {
+        "label": "Backend: Build",
+        "type": "shell",
+        "command": "mvn",
+        "args": ["clean", "package", "-DskipTests"],
+        "cwd": "${workspaceFolder:Backend (Spring Boot)}",
+        "group": "build"
+      },
+      {
+        "label": "Backend: Run",
+        "type": "shell",
+        "command": "mvn",
+        "args": ["spring-boot:run"],
+        "cwd": "${workspaceFolder:Backend (Spring Boot)}",
+        "group": "run",
+        "isBackground": true
+      },
+      {
+        "label": "Frontend: Install",
+        "type": "shell",
+        "command": "npm",
+        "args": ["install"],
+        "cwd": "${workspaceFolder:Frontend (React)}",
+        "group": "build"
+      },
+      {
+        "label": "Frontend: Start",
+        "type": "shell",
+        "command": "npm",
+        "args": ["start"],
+        "cwd": "${workspaceFolder:Frontend (React)}",
+        "group": "run",
+        "isBackground": true
+      }
+    ]
+  }
+}

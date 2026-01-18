@@ -5,6 +5,7 @@ A comprehensive full-stack application for automating risk assessment and underw
 ## 📋 Project Overview
 
 RiskGuard is designed to:
+
 - Automate risk assessment and underwriting processes
 - Calculate risk scores based on customer profiles and historical data
 - Generate underwriting decisions automatically
@@ -13,6 +14,7 @@ RiskGuard is designed to:
 - Support role-based access for underwriters, agents, and administrators
 
 ### Key Features
+
 - **Customer Profile Management**: Capture and validate customer data
 - **Risk Scoring**: Automated risk calculation using predefined rules
 - **Underwriting Workflow**: Approve/reject applications with audit trails
@@ -57,6 +59,7 @@ RiskGuard/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Java 17 or higher
 - Node.js 18+
 - Docker & Docker Compose (recommended)
@@ -127,6 +130,7 @@ npm start
 ## 📚 API Endpoints
 
 ### Customer Management
+
 - `GET /api/customers` - Get all customers
 - `POST /api/customers` - Create new customer
 - `GET /api/customers/{id}` - Get customer details
@@ -134,6 +138,7 @@ npm start
 - `DELETE /api/customers/{id}` - Delete customer
 
 ### Risk Assessment
+
 - `GET /api/risk-assessments` - Get all assessments
 - `POST /api/risk-assessments` - Create new assessment
 - `GET /api/risk-assessments/{id}` - Get assessment details
@@ -141,6 +146,7 @@ npm start
 - `GET /api/risk-assessments/result/{result}` - Filter by result
 
 ### Underwriting Decisions
+
 - `GET /api/underwriting-decisions` - Get all decisions
 - `POST /api/underwriting-decisions` - Create new decision
 - `GET /api/underwriting-decisions/{id}` - Get decision details
@@ -148,6 +154,7 @@ npm start
 - `PUT /api/underwriting-decisions/{id}` - Update decision
 
 ### Policy Management
+
 - `GET /api/policies` - Get all policies
 - `POST /api/policies` - Create new policy
 - `GET /api/policies/{id}` - Get policy details
@@ -155,6 +162,7 @@ npm start
 - `PUT /api/policies/{id}` - Update policy
 
 ### Premium Payments
+
 - `GET /api/premium-payments` - Get all payments
 - `POST /api/premium-payments` - Record new payment
 - `GET /api/premium-payments/{id}` - Get payment details
@@ -162,6 +170,7 @@ npm start
 - `PUT /api/premium-payments/{id}` - Update payment
 
 ### Analytics & Reporting
+
 - `GET /api/risk-reports` - Get all reports
 - `POST /api/risk-reports` - Generate new report
 - `GET /api/risk-reports/{id}` - Get report details
@@ -169,31 +178,41 @@ npm start
 ## 🎯 Modules
 
 ### 1. Customer Profile & Data Collection
+
 Manages customer information and document uploads
+
 - Customer registration and profile management
 - Document upload and verification
 - Data validation and completeness checks
 
 ### 2. Risk Scoring & Rule Engine
+
 Calculates risk scores and applies underwriting rules
+
 - Automated risk scoring algorithm
 - Rule-based decision engine
 - High-risk profile flagging
 
 ### 3. Underwriting Decision & Policy Issuance
+
 Approves/rejects applications and issues policies
+
 - Underwriting workflow management
 - Policy document generation
 - Compliance audit logging
 
 ### 4. Premium Calculation & Payment Integration
+
 Manages premium calculation and payment processing
+
 - Dynamic premium calculation
 - Payment gateway integration
 - Payment tracking and reconciliation
 
 ### 5. Risk Analytics & Reporting
+
 Provides insights and analytics
+
 - Risk distribution analysis
 - Underwriting trends
 - Management dashboards and reports
@@ -201,12 +220,14 @@ Provides insights and analytics
 ## 🎨 User Interface
 
 ### Underwriter Dashboard
+
 - Quick statistics (total applications, approvals, rejections)
 - Risk distribution chart
 - Applications requiring manual review
 - Risk assessment details
 
 ### Admin Dashboard
+
 - System-wide statistics
 - Customer metrics
 - System health monitoring
@@ -251,6 +272,7 @@ logging.level.com.riskguard=DEBUG
 ### Frontend Configuration
 
 Environment variables in `.env`:
+
 ```
 REACT_APP_API_URL=http://localhost:8080/api
 ```
@@ -258,12 +280,14 @@ REACT_APP_API_URL=http://localhost:8080/api
 ## 🧪 Testing
 
 ### Backend Tests
+
 ```bash
 cd backend
 mvn test
 ```
 
 ### Frontend Tests
+
 ```bash
 cd frontend
 npm test
@@ -274,6 +298,7 @@ npm test
 ### Production Build
 
 #### Backend
+
 ```bash
 cd backend
 mvn clean package -DskipTests
@@ -281,6 +306,7 @@ java -jar target/riskguard-1.0.0.jar
 ```
 
 #### Frontend
+
 ```bash
 cd frontend
 npm run build
@@ -288,6 +314,7 @@ npm run build
 ```
 
 ### Docker Deployment
+
 ```bash
 docker-compose -f docker-compose.yml up -d
 ```
@@ -303,6 +330,7 @@ docker-compose -f docker-compose.yml up -d
 ## 📋 Database Schema
 
 Key tables:
+
 - **customers** - Customer information
 - **documents** - Uploaded documents for verification
 - **risk_assessments** - Risk evaluation results
@@ -326,6 +354,7 @@ This project is proprietary and confidential.
 ## 📞 Support
 
 For issues, questions, or suggestions:
+
 1. Check existing documentation
 2. Review API endpoint specifications
 3. Check database schema and relationships
@@ -334,6 +363,7 @@ For issues, questions, or suggestions:
 ## 🔄 Workflow
 
 ### Application Processing Flow
+
 1. **Customer Registration** → Register and upload documents
 2. **Data Validation** → Verify completeness and authenticity
 3. **Risk Assessment** → Calculate risk score using rules
@@ -356,3 +386,7 @@ For issues, questions, or suggestions:
 **Version**: 1.0.0  
 **Last Updated**: January 2026  
 **Status**: Production Ready
+
+## 🔗 Live Link
+
+- Live project (GitHub): https://github.com/Arun-237/Insurance-Risk-Guard

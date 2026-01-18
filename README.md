@@ -1,6 +1,6 @@
 # RiskGuard - Insurance Risk Assessment & Underwriting System
 
-A comprehensive full-stack application for automating risk assessment and underwriting processes for insurance providers. Built with Java Spring Boot backend, React frontend, and SQL Server database.
+A comprehensive full-stack application for automating risk assessment and underwriting processes for insurance providers. Built with Java Spring Boot backend, React frontend, and MySQL database.
 
 ## 📋 Project Overview
 
@@ -49,7 +49,7 @@ RiskGuard/
 │   ├── Dockerfile
 │   ├── nginx.conf
 │   └── package.json
-├── database/                     # SQL Server schemas
+├── database/                     # MySQL schema and sample data
 │   ├── schema.sql               # Database structure
 │   └── sample-data.sql          # Sample data
 ├── docker-compose.yml           # Docker orchestration
@@ -63,7 +63,7 @@ RiskGuard/
 - Java 17 or higher
 - Node.js 18+
 - Docker & Docker Compose (recommended)
-- SQL Server 2022 or SQL Server Express
+- MySQL 8.0 (or MariaDB 10.6+)
 - Maven 3.9+
 
 ### Option 1: Using Docker Compose (Recommended)
@@ -77,8 +77,8 @@ docker-compose up --build
 
 # Services will be available at:
 # Frontend: http://localhost:3000
-# Backend: http://localhost:8080/api
-# SQL Server: localhost:1433
+# Backend: http://localhost:8082/api
+# MySQL: localhost:3306
 ```
 
 ### Option 2: Manual Setup
@@ -86,14 +86,16 @@ docker-compose up --build
 #### 1. Database Setup
 
 ```bash
-# Start SQL Server (Windows/Docker)
-# Use SQL Server Management Studio or Azure Data Studio
+# Start MySQL locally or via Docker
+
+# Create database (if not present)
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS riskguard CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 
 # Run schema creation
-sqlcmd -S localhost -U sa -P YourPassword@123 -i database/schema.sql
+mysql -u root -p riskguard < database/schema.sql
 
-# Load sample data
-sqlcmd -S localhost -U sa -P YourPassword@123 -i database/sample-data.sql
+# Load sample data (optional)
+mysql -u root -p riskguard < database/sample-data.sql
 ```
 
 #### 2. Backend Setup
@@ -102,15 +104,15 @@ sqlcmd -S localhost -U sa -P YourPassword@123 -i database/sample-data.sql
 cd backend
 
 # Update database connection in application.properties
-# spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=riskguard
-# spring.datasource.username=sa
-# spring.datasource.password=YourPassword@123
+# spring.datasource.url=jdbc:mysql://localhost:3306/riskguard?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+# spring.datasource.username=root
+# spring.datasource.password=your_db_password
 
 # Build and run
 mvn clean install
 mvn spring-boot:run
 
-# Backend runs on http://localhost:8080
+# Backend runs on http://localhost:8082
 ```
 
 #### 3. Frontend Setup
@@ -250,13 +252,13 @@ Provides insights and analytics
 
 ```properties
 # Server
-server.port=8080
-server.servlet.context-path=/api
+server.port=8082
 
-# Database
-spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=riskguard
-spring.datasource.username=sa
-spring.datasource.password=YourPassword@123
+# Database (MySQL)
+spring.datasource.url=jdbc:mysql://localhost:3306/riskguard?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=your_db_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # JPA/Hibernate
 spring.jpa.hibernate.ddl-auto=update
@@ -274,7 +276,7 @@ logging.level.com.riskguard=DEBUG
 Environment variables in `.env`:
 
 ```
-REACT_APP_API_URL=http://localhost:8080/api
+REACT_APP_API_URL=http://localhost:8082/api
 ```
 
 ## 🧪 Testing
